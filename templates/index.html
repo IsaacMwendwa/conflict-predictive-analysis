@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Predictive Analysis of Conflict Events</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: black;
+            color: red;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+
+        #prediction {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #prediction td,
+        #prediction th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #prediction tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #prediction tr:hover {
+            background-color: #ddd;
+        }
+
+        #prediction th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Predictive Analysis of Conflict Events Incidence in Kenya</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <p><b>Background Information</b></p>
+                <p>Big Data Analytics have been applied in various use-cases, with an intention of
+                    providing insights which can drive decision-making, policy reforms and strategic planning.
+                </p>
+                <p>The objective of this study is to give a proof of concept that big data analytics can be applied to
+                    conflict data and predict the future occurrences of conflict events in Kenya.</p>
+            </div>
+
+            <div class="col-sm-8 text-left">
+                <h1>Predictive Analysis of Conflict Events Incidence in Kenya</h1>
+                <p>Welcome to do a Predictive Analysis of Conflict Events Metrics in Kenya.
+                    The project comprises of two models which are in their default (not optimized) configuration.
+                    One model functions to predict the most probable Event Types to happen in the prediction period.
+                    The other model seeks to predict the Counties projected to have a high level of Conflict Events
+                    Incidence in the prediction period.
+                </p>
+                <p>The prediction problem is formulated as: Given the future date for which predictions are to be
+                    performed,
+                    predict the Event Types and the Most Probable High Incidence Counties, in the prediction period.
+                </p>
+                <h3>Specifying Prediction Date</h3>
+                <p>Please proceed to enter a Prediction Date in the field labelled "Prediction Date".</p>
+                <p>The system will then use predictive models to predict Event Types and the Most Probable High
+                    Incidence Counties, in the prediction period</p>
+
+                <form action="/result" method="POST">
+                    <label for="date">Prediction Date</label>
+                    <input type="text" id="date" name="date" placeholder="Enter date in DD/MM/YYYY format">
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+
+
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+                    <p><b>Predictive Models Built</b></p>
+                    <p>Predictive Analysis of Conflict Event Types</p>
+                    <p>Predictive Analysis of High Conflict Incidence Counties</p>
+                </div>
+
+                <div class="well">
+                    <p><b>Data Source</b></p>
+                    <p>Armed Conflict Location and Event Data Project (ACLED) Dataset</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <p>Copyright © 2021 Scofield Associates</p>
+    </footer>
+</body>
+
+</html>
